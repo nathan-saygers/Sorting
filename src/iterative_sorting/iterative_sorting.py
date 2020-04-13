@@ -15,7 +15,6 @@ def selection_sort( arr ):
         temp = arr[current_index]
         arr[current_index] = arr[smallest_index]
         arr[smallest_index] = temp
-        print('array after swap:', arr)
         
     return arr
 
@@ -38,8 +37,6 @@ def bubble_sort( arr ):
     # start left_index = to i and right_index = to i + 1
         left = i
         right = left + 1
-        print('left and right', left, right)
-        print('the array', arr)
     # if left is greater than right... 
         if arr[left] > arr[right]:
             # SWAP the values at the two indexes
@@ -48,10 +45,8 @@ def bubble_sort( arr ):
             arr[right] = temp
     # swap_count ++
             swap_count = swap_count + 1
-            print('swap count', swap_count)
     # if swap_count is greater than 0 call the bubble_sort function again
     if swap_count > 0:
-        print('recur!')
         bubble_sort(arr)
     # else return the arr
     return arr

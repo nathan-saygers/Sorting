@@ -30,6 +30,7 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
+    # start a swap_count variable = to 0
     swap_count = 0
     # LOOP over the array - range: 0, len(arr) - 1
     for i in range(0, len(arr) - 1):
@@ -39,8 +40,6 @@ def bubble_sort( arr ):
         right = left + 1
         print('left and right', left, right)
         print('the array', arr)
-    # start a swap_count variable = to 0
-        
     # if left is greater than right... 
         if arr[left] > arr[right]:
             # SWAP the values at the two indexes

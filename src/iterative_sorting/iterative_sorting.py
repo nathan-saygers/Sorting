@@ -19,7 +19,7 @@ def selection_sort( arr ):
         
     return arr
 
-print(selection_sort([4, 5, 1, 8, 2, 7]))
+# print(selection_sort([4, 5, 1, 8, 2, 7]))
 
 
 #                    cur
@@ -30,8 +30,45 @@ print(selection_sort([4, 5, 1, 8, 2, 7]))
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-
+    swap_count = 0
+    # LOOP over the array - range: 0, len(arr) - 1
+    for i in range(0, len(arr) - 1):
+    # Declare a left and right variable
+    # start left_index = to i and right_index = to i + 1
+        left = i
+        right = left + 1
+        print('left and right', left, right)
+        print('the array', arr)
+    # start a swap_count variable = to 0
+        
+    # if left is greater than right... 
+        if arr[left] > arr[right]:
+            # SWAP the values at the two indexes
+            temp = arr[left]
+            arr[left] = arr[right]
+            arr[right] = temp
+    # swap_count ++
+            swap_count = swap_count + 1
+            print('swap count', swap_count)
+    # if swap_count is greater than 0 call the bubble_sort function again
+    if swap_count > 0:
+        print('recur!')
+        bubble_sort(arr)
+    # else return the arr
     return arr
+
+# print('here we go...', bubble_sort([4, 1, 5, 2, 7, 8]))
+
+    # [4, 1, 5, 2, 7, 8]
+#    i                          < -- first loop
+#   lef          < -- second loop
+#   rit / j     < -- second loop
+
+# first loop range: i to arr length - 1
+# second loop range: j to arr length - 1
+
+
+
 
 
 # STRETCH: implement the Count Sort function below

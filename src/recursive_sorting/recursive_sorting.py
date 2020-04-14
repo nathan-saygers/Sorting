@@ -1,3 +1,5 @@
+import math
+
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     # create new array with length equal to arrA.len + arrB.len
@@ -29,17 +31,15 @@ def merge( arrA, arrB ):
             #REMOVE the smaller element from its parent array
             merged_arr[i] = arrA.pop(0)
     
-    print(merged_arr)
-    
     return merged_arr
 
 # testArr = [1,2,3,4,5,6]
 # print(testArr[1:])
 # print(testArr[0])
 
-merge([1,2,3], [4,5,6])
-merge([], [])
-merge([6,7,8,9], [0,1,2,3,4,5])
+# merge([1,2,3], [4,5,6])
+# merge([], [])
+# print(merge([6,7,8,9], [0,1,2,3,4,5]))
 
 
 
@@ -47,9 +47,22 @@ merge([6,7,8,9], [0,1,2,3,4,5])
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
     # TO-DO
+    #DIVIDE the input arr into a left and right half
+    left = arr[:len(arr)//2]
+    right = arr[len(arr)//2:]
+    #CHECK to see if the array lengths are 1
+    if len(left) > 1:
+        #IF NOT call merge_sort again to split arrays in half
+        left = merge_sort(left)
+    if len(right) > 1:
+        #IF NOT call merge_sort again to split arrays in half
+        right = merge_sort(right)
+    
+    #IF SO call return merge helper to join them together
+    sorted_arr = merge(left, right)
+    return sorted_arr
 
-    return arr
-
+print(merge_sort([1, 5, 4, 8, 2, 9, 6, 0, 3, 7]))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
